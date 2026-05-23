@@ -400,10 +400,9 @@
 
     .section-desc {
       color: rgba(255,255,255,0.5);
-      font-size: 20px;
+      font-size: clamp(14px, 2vw, 20px);
       font-weight: 300;
-      max-width: none;
-      white-space: nowrap;
+      max-width: 700px;
       line-height: 1.8;
     }
 
@@ -484,7 +483,7 @@
 
     .greeting-wrap {
       display: grid;
-      grid-template-columns: 1fr 1.6fr;
+      grid-template-columns: 1fr 3fr;
       gap: 64px;
       align-items: center;
     }
@@ -518,6 +517,13 @@
 
     .portrait-placeholder span { font-size: 13px; }
 
+    .greeting-portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .portrait-frame {
       position: absolute;
       inset: 0;
@@ -534,17 +540,22 @@
       border-radius: 14px;
       padding: 16px 20px;
       border: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
     }
 
     .greeting-badge .name {
-      font-size: 17px;
+      font-size: 22px;
       font-weight: 700;
+      display: block;
+      width: 100%;
     }
 
     .greeting-badge .title {
       font-size: 13px;
       color: var(--red1);
       margin-top: 2px;
+      display: block;
+      width: 100%;
     }
 
     .greeting-content blockquote {
@@ -568,7 +579,7 @@
       background: var(--grad);
     }
 
-    .sign-text { font-size: 15px; font-weight: 700; }
+    .sign-text { font-size: 25px; font-weight: 700; }
     .sign-sub  { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 3px; }
 
     @media (max-width: 900px) {
@@ -994,35 +1005,36 @@
   <section id="greeting">
     <div class="greeting-wrap">
       <div class="greeting-portrait reveal">
-        <div class="portrait-placeholder">
+        <img src="images/chairman.jpg" alt="한국건설기술인협회 회장 박종면" class="greeting-portrait-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="portrait-placeholder" style="display:none;">
           <div class="icon">👤</div>
           <span>회장님 사진</span>
         </div>
-        <div class="portrait-frame"></div>
-        <div class="greeting-badge">
-          <div class="name">한국건설기술인협회 회장</div>
-          <div class="title">스마트건설기술교육 총괄</div>
-        </div>
+        
       </div>
       <div class="greeting-content reveal">
-        <span class="section-tag">Chairman's Message</span>
-        <h2 class="section-title">회장님<br />인사말씀</h2>
+        <h2 class="section-title">스마트 건설의 미래를 이끌어갈 청년 여러분, 환영합니다.</h2>
         <blockquote>
-          안녕하십니까, 한국건설기술인협회 회장입니다.<br /><br />
-          우리 건설 산업은 지금 디지털 혁신의 거대한 물결 앞에 서 있습니다.
-          BIM·드론·스마트 안전관리 등 첨단 기술이 현장을 바꾸고 있으며,
-          이 변화에 발맞추는 건설기술인만이 미래를 주도할 수 있습니다.<br /><br />
-          한국건설기술인협회는 건설 현장의 최전선에서 일하는 여러분이
-          새로운 기술을 두려움 없이 받아들이고 성장할 수 있도록,
-          현장 중심의 스마트건설기술 교육 체계를 구축하였습니다.<br /><br />
-          본 교육과정을 통해 여러분의 전문성이 한 단계 더 높아지고,
-          대한민국 건설 산업의 경쟁력 강화에 함께해 주시길 진심으로 바랍니다.
+          안녕하십니까, 한국건설기술인협회 회장 박종면입니다.<br><br>
+          먼저, 우리 협회가 주관하는 ‘스마트건설기술교육’에 관심을 가져주신 대학생 여러분을 진심으로 환영합니다.<br>
+          건설 산업의 새로운 내일을 위해 끊임없이 배우고 도전하는 여러분의 뜨거운 열정에 깊은 찬사와 응원의 박수를 보냅니다.<br><br>
+          건설 산업의 패러다임이 눈부시게 진화하고 있습니다.<br>
+          과거의 건설 현장이 땀과 경험을 바탕으로 인프라의 뼈대를 세우는 과정이었다면, 오늘날의 건설은 첨단 기술이 융합된 혁신의 무대입니다.<br>
+          인공지능(AI)과 빅데이터를 활용한 데이터 기반의 공정 관리, 디지털 트윈과 BIM(건설정보모델링), 그리고 건설 로보틱스에 이르기까지<br>
+          최신 IT 기술들이 도면 위의 상상을 현실로 만들어가고 있습니다.<br><br>
+          이제 건설 산업은 단순한 물리적 시공을 넘어, 기술과 데이터를 통해 공간의 가치를 극대화하는 ‘스마트 하이테크 산업’으로 확고히 자리매김하였습니다.<br>
+          여러분이 곧 대한민국 건설의 새로운 경쟁력입니다.<br>
+          스마트건설기술교육은 강의실에서 배운 공학적 이론을 넘어, 실제 현장에서 요구되는 디지털 역량과 스마트 시공 감각을 생생하게 익히는 핵심적인 발판이 될 것입니다.<br>
+          교육 기간 동안 낯선 기술에 과감히 부딪혀 보고, 다양한 전공의 동료들과 소통하며 융합적 사고를 지닌 차세대 엔지니어로 성장하시기를 바랍니다.<br><br>
+          한국건설기술인협회는 여러분이 한계에 얽매이지 않고 마음껏 상상하며 도전할 수 있도록 가장 든든한 조력자가 되겠습니다.<br>
+          100만 건설기술인이 다져온 탄탄한 기반 위에, 여러분만의 창의적이고 혁신적인 스마트 기술을 더해 전 세계를 무대로 활약하는 K-건설의 주역이 되어 주시기를 기대합니다.<br>
+          다시 한번 홈페이지 방문을 환영하며, 여러분의 땀방울이 미래의 훌륭한 자산으로 결실 맺기를 진심으로 기원합니다.<br><br>
+          감사합니다.
         </blockquote>
         <div class="greeting-sign">
           <div class="sign-bar"></div>
           <div>
-            <div class="sign-text">한국건설기술인협회 회장</div>
-            <div class="sign-sub">Korea Construction Engineers Association</div>
+            <div class="sign-text">한국건설기술인협회 회장 박종면</div>
           </div>
         </div>
       </div>
