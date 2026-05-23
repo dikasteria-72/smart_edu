@@ -400,9 +400,10 @@
 
     .section-desc {
       color: rgba(255,255,255,0.5);
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 300;
-      max-width: 560px;
+      max-width: none;
+      white-space: nowrap;
       line-height: 1.8;
     }
 
@@ -413,7 +414,7 @@
 
     .benefits-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
     }
 
@@ -421,33 +422,49 @@
       background: var(--dark3);
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 20px;
-      padding: 36px 28px;
+      overflow: hidden;
       transition: transform 0.3s, border-color 0.3s;
       position: relative;
-      overflow: hidden;
     }
 
-    .benefit-card::before {
+    .benefit-card:hover { transform: translateY(-6px); border-color: rgba(225,48,108,0.3); }
+
+    .benefit-card-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: var(--dark);
+    }
+
+    .benefit-card-img-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      color: rgba(255,255,255,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .benefit-card-body {
+      padding: 24px 24px 28px;
+      position: relative;
+    }
+
+    .benefit-card-body::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
+      top: 0; left: 24px; right: 24px;
+      height: 2px;
       background: var(--grad);
       opacity: 0;
       transition: opacity 0.3s;
     }
 
-    .benefit-card:hover { transform: translateY(-6px); border-color: rgba(225,48,108,0.3); }
-    .benefit-card:hover::before { opacity: 1; }
-
-    .benefit-icon {
-      width: 54px; height: 54px;
-      background: rgba(225,48,108,0.12);
-      border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 22px;
-      font-size: 26px;
-    }
+    .benefit-card:hover .benefit-card-body::before { opacity: 1; }
 
     .benefit-card h3 {
       font-size: 18px;
@@ -931,40 +948,49 @@
   <!-- BENEFITS -->
   <section id="benefits">
     <div class="section-header reveal">
-      <span class="section-tag">Education Benefits</span>
-      <h2 class="section-title">교육이수의<br />핵심 장점</h2>
-      <p class="section-desc">스마트건설기술 교육은 단순한 자격증 취득을 넘어, 현장 실무에서 즉시 활용 가능한 역량을 길러드립니다.</p>
+      <h2 class="section-title">교육이수 특전</h2>
+      <p class="section-desc">스마트건설기술에 대한 이해를 높이고, 현장 실무역량을 갖춘 청년 건설기술인을 양성</p>
     </div>
     <div class="benefits-grid">
       <div class="benefit-card reveal">
-        <div class="benefit-icon">🏆</div>
-        <h3>국가공인 자격 취득</h3>
-        <p>한국건설기술인협회 인증 교육과정으로, 법정 의무교육 이수 및 건설기술인 경력관리 점수에 반영됩니다.</p>
+        <img src="images/benefit1.jpg" alt="국가공인 자격 취득" class="benefit-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="benefit-card-img-placeholder" style="display:none">🏆</div>
+        <div class="benefit-card-body">
+          <h3>국가공인 자격 취득</h3>
+          <p>한국건설기술인협회 인증 교육과정으로, 법정 의무교육 이수 및 건설기술인 경력관리 점수에 반영됩니다.</p>
+        </div>
       </div>
       <div class="benefit-card reveal">
-        <div class="benefit-icon">📡</div>
-        <h3>최신 스마트기술 습득</h3>
-        <p>BIM, 드론 측량, IoT 스마트 안전관리, AR/VR 시뮬레이션 등 4차산업혁명 건설 기술을 체계적으로 학습합니다.</p>
+        <img src="images/benefit2.jpg" alt="최신 스마트기술 습득" class="benefit-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="benefit-card-img-placeholder" style="display:none">📡</div>
+        <div class="benefit-card-body">
+          <h3>최신 스마트기술 습득</h3>
+          <p>BIM, 드론 측량, IoT 스마트 안전관리, AR/VR 시뮬레이션 등 4차산업혁명 건설 기술을 체계적으로 학습합니다.</p>
+        </div>
       </div>
       <div class="benefit-card reveal">
-        <div class="benefit-icon">📈</div>
-        <h3>경력 및 급여 상승</h3>
-        <p>스마트건설 전문 인력에 대한 수요가 급증하고 있습니다. 자격 이수 후 평균 연봉 상승률 15% 이상을 기록하고 있습니다.</p>
+        <img src="images/benefit3.jpg" alt="경력 및 급여 상승" class="benefit-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="benefit-card-img-placeholder" style="display:none">📈</div>
+        <div class="benefit-card-body">
+          <h3>경력 및 급여 상승</h3>
+          <p>스마트건설 전문 인력에 대한 수요가 급증하고 있습니다. 자격 이수 후 평균 연봉 상승률 15% 이상을 기록하고 있습니다.</p>
+        </div>
       </div>
       <div class="benefit-card reveal">
-        <div class="benefit-icon">🤝</div>
-        <h3>현장 전문가 네트워크</h3>
-        <p>전국 200여 개 건설사 현장 전문가들과의 네트워킹 기회를 통해 취업·전직·사업 확장의 발판을 마련하세요.</p>
+        <img src="images/benefit4.jpg" alt="현장 전문가 네트워크" class="benefit-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="benefit-card-img-placeholder" style="display:none">🤝</div>
+        <div class="benefit-card-body">
+          <h3>현장 전문가 네트워크</h3>
+          <p>전국 200여 개 건설사 현장 전문가들과의 네트워킹 기회를 통해 취업·전직·사업 확장의 발판을 마련하세요.</p>
+        </div>
       </div>
       <div class="benefit-card reveal">
-        <div class="benefit-icon">🖥️</div>
-        <h3>온·오프라인 혼합 교육</h3>
-        <p>바쁜 현장 일정에도 유연하게 참여할 수 있도록 온라인 사전 학습과 오프라인 실습을 병행한 하이브리드 과정을 운영합니다.</p>
-      </div>
-      <div class="benefit-card reveal">
-        <div class="benefit-icon">🔧</div>
-        <h3>실습 중심 커리큘럼</h3>
-        <p>이론에 그치지 않는 실제 현장 사례와 실습 중심의 커리큘럼으로, 교육 이후 즉시 업무에 적용할 수 있는 실전 역량을 습득합니다.</p>
+        <img src="images/benefit5.jpg" alt="온·오프라인 혼합 교육" class="benefit-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="benefit-card-img-placeholder" style="display:none">🖥️</div>
+        <div class="benefit-card-body">
+          <h3>온·오프라인 혼합 교육</h3>
+          <p>바쁜 현장 일정에도 유연하게 참여할 수 있도록 온라인 사전 학습과 오프라인 실습을 병행한 하이브리드 과정을 운영합니다.</p>
+        </div>
       </div>
     </div>
   </section>
