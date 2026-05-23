@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>스마트건설기술교육 | 한국건설기술인협회</title>
+  <title>스마트건설기술교육</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
@@ -312,20 +312,20 @@
     }
 
     .btn-primary {
-      background: var(--grad);
+      background: transparent;
       color: #fff;
-      border: none;
+      border: 1.5px solid rgba(255,255,255,0.25);
       padding: 14px 36px;
       border-radius: 32px;
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 700;
       cursor: pointer;
       text-decoration: none;
-      transition: opacity 0.2s, transform 0.2s;
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
       display: inline-block;
     }
 
-    .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
+    .btn-primary:hover { border-color: var(--red1); color: var(--red1); transform: translateY(-2px); }
 
     .btn-outline {
       background: transparent;
@@ -333,7 +333,7 @@
       border: 1.5px solid rgba(255,255,255,0.25);
       padding: 14px 36px;
       border-radius: 32px;
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 500;
       cursor: pointer;
       text-decoration: none;
@@ -858,14 +858,13 @@
   <!-- NAV -->
   <nav>
     <a href="#hero" class="nav-logo">
-      <div class="nav-logo-icon">S</div>
       <span class="nav-logo-text">스마트건설기술교육</span>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#benefits">교육 장점</a></li>
-      <li><a href="#greeting">인사말</a></li>
+      <li><a href="#benefits">교육이수 특전</a></li>
+      <li><a href="#greeting">청년들에게</a></li>
       <li><a href="#records">교육실적</a></li>
-      <li><a href="#contact" class="nav-cta">교육 문의</a></li>
+      <li><a href="#contact" class="nav-cta">문의</a></li>
     </ul>
     <div class="hamburger" id="hamburger" onclick="toggleNav()">
       <span></span><span></span><span></span>
@@ -902,19 +901,15 @@
     </div>
 
     <div class="hero-content">
-      <div class="hero-badge">한국건설기술인협회 공식 교육과정</div>
+      
       <h1 class="hero-title">
-        미래를 짓는<br />
-        <span class="accent">스마트건설기술</span><br />
-        전문 교육
+        예비 청년건설기술인을 위한<br />
+        <span class="accent">스마트건설기술 교육</span>
       </h1>
-      <p class="hero-sub">
-        디지털 전환 시대, 건설 현장의 패러다임이 바뀌고 있습니다.<br />
-        BIM·드론·스마트 안전 기술로 현장 경쟁력을 높이세요.
-      </p>
+      
       <div class="hero-btns">
-        <a href="#contact" class="btn-primary">교육 신청하기</a>
-        <a href="#benefits" class="btn-outline">교육 자세히 보기</a>
+        <a href="#contact" class="btn-primary">교육문의</a>
+        <a href="#benefits" class="btn-outline">교육특전</a>
       </div>
       <div class="hero-stats">
         <div class="stat-item">
