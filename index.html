@@ -717,6 +717,88 @@
       align-items: start;
     }
 
+    /* 대학 문의처 */
+    .uni-contact-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .uni-contact-header {
+      margin-bottom: 24px;
+    }
+
+    .uni-contact-header h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .uni-contact-header p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .uni-divider {
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #6366f1);
+      border-radius: 2px;
+      margin-top: 12px;
+    }
+
+    .uni-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .uni-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .uni-item:last-child { border-bottom: none; }
+
+    .uni-logo {
+      width: 90px; height: 90px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.05);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .uni-logo img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .uni-info { flex: 1; }
+
+    .uni-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+
+    .uni-dept {
+      font-size: 13px;
+      color: rgba(255,255,255,0.38);
+      margin-bottom: 6px;
+    }
+
+    .uni-tel {
+      font-size: 17px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.3px;
+    }
+
     .contact-info-list {
       display: flex;
       flex-direction: column;
@@ -740,7 +822,7 @@
     }
 
     .contact-detail .clabel {
-      font-size: 12px;
+      font-size: 14px;
       color: var(--red1);
       font-weight: 700;
       letter-spacing: 0.8px;
@@ -749,12 +831,12 @@
     }
 
     .contact-detail .cvalue {
-      font-size: 16px;
+      font-size: 19px;
       font-weight: 600;
     }
 
     .contact-detail .csub {
-      font-size: 13px;
+      font-size: 15px;
       color: rgba(255,255,255,0.45);
       margin-top: 2px;
     }
@@ -1111,7 +1193,7 @@
       <div>
         <div class="reveal">
           <h2 class="section-title">교육문의</h2>
-          <p class="section-desc">한국건설기술인협회 건설기술인 일자리지원센터</p>
+          <h2>한국건설기술인협회 건설기술인 일자리지원센터</h2>
         </div>
         <div class="contact-info-list">
           <div class="contact-item reveal">
@@ -1144,30 +1226,42 @@
           </div>
         </div>
       </div>
-      <div class="contact-form-box reveal">
-        <h3>교육 문의 남기기</h3>
-        <div class="form-group">
-          <label>이름</label>
-          <input type="text" placeholder="홍길동" />
+
+      <!-- 협력대학 문의처 -->
+      <div class="uni-contact-box reveal">
+        <div class="uni-contact-header">
+          <h2><br>2026년 6월 공동주최 3개 대학교 문의처</h2>
+          <div class="uni-divider"></div>
         </div>
-        <div class="form-group">
-          <label>연락처</label>
-          <input type="tel" placeholder="010-0000-0000" />
+        <div class="uni-list">
+
+          <div class="uni-item">
+            <div class="uni-logo"><img src="images/logo_konkuk.png" alt="건국대학교"></div>
+            <div class="uni-info">
+              <div class="uni-name">건국대학교 취업지원센터</div>
+              <div class="uni-tel">02-450-3363</div>
+            </div>
+          </div>
+
+          <div class="uni-item">
+            <div class="uni-logo"><img src="images/logo_mokpo.png" alt="목포대학교"></div>
+            <div class="uni-info">
+              <div class="uni-name">목포대학교 취업지원센터</div>
+              <div class="uni-tel">061-450-2114</div>
+            </div>
+          </div>
+
+          <div class="uni-item">
+            <div class="uni-logo"><img src="images/logo_yeungnam.png" alt="영남대학교"></div>
+            <div class="uni-info">
+              <div class="uni-name">영남대학교 취업지원센터</div>
+              <div class="uni-tel">053-810-1234</div>
+            </div>
+          </div>
+
         </div>
-        <div class="form-group">
-          <label>이메일</label>
-          <input type="email" placeholder="example@email.com" />
-        </div>
-        <div class="form-group">
-          <label>소속 기관 / 회사</label>
-          <input type="text" placeholder="(주)스마트건설" />
-        </div>
-        <div class="form-group">
-          <label>문의 내용</label>
-          <textarea rows="4" placeholder="교육 일정, 단체 교육, 커리큘럼 등 궁금하신 내용을 적어주세요."></textarea>
-        </div>
-        <button class="form-submit">문의 보내기</button>
       </div>
+
     </div>
   </section>
 
