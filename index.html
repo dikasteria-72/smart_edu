@@ -624,25 +624,20 @@
       background: var(--grad);
     }
 
-    .record-stat .num {
-      font-size: clamp(32px, 4vw, 52px);
-      font-weight: 900;
-      background: var(--grad);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      letter-spacing: -1px;
-    }
-
-    .record-stat .unit {
-      font-size: 18px;
-      font-weight: 700;
+    .record-stat .stat-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      margin-bottom: 14px;
     }
 
     .record-stat .label {
-      font-size: 14px;
-      color: rgba(255,255,255,0.5);
-      margin-top: 6px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 0;
     }
 
     .timeline {
@@ -1046,25 +1041,21 @@
     <div class="records-top">
       <div class="reveal">
         <h2 class="section-title">2026년도 6월에 진행 예정 교육일정</h2>
-        <p class="section-desc">15년간 쌓아온 교육의 결과, 대한민국 스마트건설 인재 양성을 선도하고 있습니다.</p>
+        <p class="section-desc">수도권, 영남권과 호남권에서 진행되어 교육참여가 더욱 쉬워졌습니다.</p>
       </div>
     </div>
     <div class="record-stats">
       <div class="record-stat reveal">
-        <div class="num">12,000<span class="unit">+</span></div>
-        <div class="label">누적 교육 이수자</div>
+        <img class="stat-img" src="images/uni1.jpg" alt="건국대학교">
+        <div class="label">2026.06.29.(월) - 07.03.(금)</div>
       </div>
       <div class="record-stat reveal">
-        <div class="num">850<span class="unit">+</span></div>
-        <div class="label">연간 교육 시간</div>
+        <img class="stat-img" src="images/uni2.jpg" alt="목포대학교">
+        <div class="label">2026.06.22.(월) - 06.26.(금)</div>
       </div>
       <div class="record-stat reveal">
-        <div class="num">48<span class="unit">개</span></div>
-        <div class="label">운영 교육 과정 수</div>
-      </div>
-      <div class="record-stat reveal">
-        <div class="num">200<span class="unit">+</span></div>
-        <div class="label">협력 건설사</div>
+        <img class="stat-img" src="images/uni3.jpg" alt="영남대학교">
+        <div class="label">2026.06.22.(월) - 06.26.(금)</div>
       </div>
     </div>
     <div class="timeline">
