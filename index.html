@@ -396,6 +396,7 @@
       letter-spacing: -1px;
       line-height: 1.2;
       margin-bottom: 14px;
+      text-align: center;
     }
 
     .section-desc {
@@ -464,6 +465,77 @@
     }
 
     .benefit-card:hover .benefit-card-body::before { opacity: 1; }
+
+    /* ── PARTNER TICKER ──────────────────────────── */
+    .partner-ticker-wrap {
+      margin-top: 60px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .partner-ticker-label {
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 24px;
+    }
+
+    .partner-ticker-track-wrap {
+      overflow: hidden;
+      width: 100%;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    }
+
+    .partner-ticker-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+      animation: partnerScroll 30s linear infinite;
+      will-change: transform;
+    }
+
+    .partner-ticker-track:hover { animation-play-state: paused; }
+
+    @keyframes partnerScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .partner-logo {
+      flex-shrink: 0;
+      width: 260px;
+      height: 100px;
+      background: var(--dark3);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .partner-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: grayscale(1) brightness(1.4);
+      opacity: 0.7;
+    }
+
+    .partner-logo-text {
+      font-size: 22px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.45);
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
 
     .benefit-card h3 {
       font-size: 20px;
@@ -969,10 +1041,10 @@
       <span class="nav-logo-text">스마트건설기술교육</span>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#benefits">교육이수 특전</a></li>
+      <li><a href="#benefits">교육특전 및 과정소개</a></li>
       <li><a href="#greeting">청년들에게</a></li>
       <li><a href="#records">교육계획 및 실적</a></li>
-      <li><a href="#contact">문의 및 신청</a></li>
+      <li><a href="#contact">문의</a></li>
     </ul>
     <div class="hamburger" id="hamburger" onclick="toggleNav()">
       <span></span><span></span><span></span>
@@ -1040,7 +1112,6 @@
   <section id="benefits">
     <div class="section-header reveal">
       <h2 class="section-title">교육이수 특전</h2>
-      <p class="section-desc">스마트건설기술에 대한 이해를 높이고, 현장 실무역량을 갖춘 청년 건설기술인을 양성</p>
     </div>
     <div class="benefits-grid">
       <div class="benefit-card reveal">
@@ -1079,6 +1150,38 @@
         </div>
       </div>
     </div>
+
+    <!-- 협력사 배너 (배너 추가 시 .partner-logo 아이템을 .partner-logos 안에 추가하세요) -->
+    <div class="partner-ticker-wrap reveal">
+      <h2 class="section-title">주요 교육과정 및 참여기업 소개</h2>
+      <div class="partner-ticker-track-wrap">
+        <div class="partner-ticker-track">
+          <!-- ★ 실제 로고 이미지 사용 시: <img src="images/partner_xxx.png" alt="협력사명"> -->
+          <!-- ★ 텍스트 로고 사용 시: <span class="partner-logo-text">협력사명</span> -->
+
+          <!-- 원본 목록 (배너 추가는 여기에 .partner-logo 복사) -->
+          <div class="partner-logo"><span class="partner-logo-text">스마트건설<br>얼라이언스</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">비전AI<br>(DL이앤씨)</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">에이전트AI<br>(포스코이앤씨)</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">건설로봇<br>(삼성물산)</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">건설로봇<br>(현대건설)</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">데이터인프라<br>(대우건설)</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">한국건설산업<br>연구원</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">국토안전관리원</span></div>
+
+          <!-- 무한 루프를 위한 복제본 (원본과 동일하게 유지) -->
+          <div class="partner-logo"><span class="partner-logo-text">스마트건설<br>얼라이언스</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">비전AI<br>(DL이앤씨)</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">에이전트AI<br>(포스코이앤씨)</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">건설로봇<br>(삼성물산)</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">건설로봇<br>(현대건설)</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">데이터인프라<br>(대우건설)</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">한국건설산업<br>연구원</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">국토안전관리원</span></div>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <!-- GREETING -->
@@ -1270,7 +1373,7 @@
     <div class="footer-logo">한국건설기술인협회 건설기술인 일자리지원센터</div>
     <div class="footer-links">
       <a href="#">TOP</a>
-      <a href="#benefits">교육이수 특전</a>
+      <a href="#benefits">교육특전 및 과정소개</a>
       <a href="#greeting">청년들에게</a>
       <a href="#records">교육계획 및 실적</a>
     </div>
