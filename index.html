@@ -49,11 +49,26 @@
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
+    .nav-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
     .nav-logo {
       display: flex;
       align-items: center;
       gap: 10px;
       text-decoration: none;
+    }
+
+    .nav-logo-group .nav-logo:not(:first-child)::before {
+      content: '';
+      display: block;
+      width: 2px;
+      height: 20px;
+      background: rgba(255,255,255,0.6);
+      margin-right: 16px;
     }
 
     .nav-logo-icon {
@@ -1037,10 +1052,16 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#hero" class="nav-logo">
-      <span class="nav-logo-text">스마트건설기술교육</span>
-    </a>
+    <div class="nav-logo-group">
+      <a href="https://homenet.kocea.or.kr:1443/kocea/koc-kr/index.do" class="nav-logo" target="_blank" rel="noopener noreferrer">
+        <span class="nav-logo-text">한국건설기술인협회</span>
+      </a>
+      <a href="https://cworknet.kocea.or.kr/worknet/work/index.do" class="nav-logo" target="_blank" rel="noopener noreferrer">
+        <span class="nav-logo-text">건설워크넷</span>
+      </a>
+    </div>
     <ul class="nav-links" id="navLinks">
+      <li><a href="#hero">TOP</a></li>
       <li><a href="#benefits">교육특전 및 과정소개</a></li>
       <li><a href="#greeting">청년들에게</a></li>
       <li><a href="#records">교육계획 및 실적</a></li>
@@ -1166,6 +1187,7 @@
           <div class="partner-logo"><span class="partner-logo-text">건설로봇<br>(삼성물산)</span></div>
           <div class="partner-logo"><span class="partner-logo-text">건설로봇<br>(현대건설)</span></div>
           <div class="partner-logo"><span class="partner-logo-text">데이터인프라<br>(대우건설)</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">OSC<br>(GS건설)</span></div>
           <div class="partner-logo"><span class="partner-logo-text">한국건설산업<br>연구원</span></div>
           <div class="partner-logo"><span class="partner-logo-text">국토안전관리원</span></div>
 
@@ -1176,6 +1198,7 @@
           <div class="partner-logo"><span class="partner-logo-text">건설로봇<br>(삼성물산)</span></div>
           <div class="partner-logo"><span class="partner-logo-text">건설로봇<br>(현대건설)</span></div>
           <div class="partner-logo"><span class="partner-logo-text">데이터인프라<br>(대우건설)</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">OSC<br>(GS건설)</span></div>
           <div class="partner-logo"><span class="partner-logo-text">한국건설산업<br>연구원</span></div>
           <div class="partner-logo"><span class="partner-logo-text">국토안전관리원</span></div>
         </div>
@@ -1210,9 +1233,9 @@
           실제 현장에서 요구되는 디지털 역량과 스마트 시공 감각을 생생하게 익히는 핵심적인 발판이 될 것입니다.<br>
           교육참여를 통해 낯선 기술에 과감히 부딪혀 보고, 다양한 전공의 동료들과 소통하며 융합적 사고를 지닌 차세대 엔지니어로 성장하시기를 바랍니다.<br><br>
           한국건설기술인협회는 여러분이 한계에 얽매이지 않고 마음껏 상상하며 도전할 수 있도록 가장 든든한 조력자가 되겠습니다.<br>
-          100만 건설기술인이 다져온 탄탄한 기반 위에, 여러분만의 창의적이고 혁신적인 스마트 기술을 더해 전 세계를 무대로 활약하는<br>
-          K-건설의 주역이 되어 주시기를 기대합니다. 다시 한번 홈페이지 방문을 환영하며,<br>
-          여러분의 땀방울이 미래의 훌륭한 자산으로 결실 맺기를 진심으로 기원합니다. 감사합니다.
+          108만 건설기술인이 다져온 탄탄한 기반 위에, 여러분만의 창의적이고 혁신적인 스마트 기술을 더해 전 세계를 무대로 활약하는<br>
+          K-건설의 주역이 되어 주시기를 기대하며 여러분의 땀방울이 미래의 훌륭한 자산으로 결실 맺기를 진심으로 기원합니다.<br>
+          감사합니다.
         </blockquote>
         <div class="greeting-sign">
           <div class="sign-bar"></div>
@@ -1268,7 +1291,7 @@
         <div class="tl-body">
           <h4>스마트건설기술교육 지방 확대</h4>
           <p>협회는 스마트건설기술교육을 전국으로 확대하기위해 부산 동아대학교에서 개최</p>
-          <p>2026.01.05.(월) - 01.09.(금), 수료생 94명</p>
+          <p>2026.01.05.(월) - 01.09.(금), 수료생 92명</p>
         </div>
       </div>
       <div class="tl-item reveal">
@@ -1283,8 +1306,8 @@
         <div class="tl-dot">2025.6</div>
         <div class="tl-body">
           <h4>스마트건설기술교육 첫걸음</h4>
-          <p>서울시립대학교에서 수도권 재학 대학생을 대상으로 스마트건설기술교육 실시</p>
-          <p>2025.06.00.(월) - 07.00.(금), 수료생 100명</p>
+          <p>서울시립대학교에서 건설관련 전공자 및 취업희망자를 대상으로 스마트건설기술교육 실시</p>
+          <p>2025.06.30.(월) - 07.04.(금), 수료생 103명</p>
         </div>
       </div>
     </div>
@@ -1317,7 +1340,7 @@
             <div class="contact-icon">📧</div>
             <div class="contact-detail">
               <div class="clabel">이메일</div>
-              <div class="cvalue">edu@kocea.or.kr</div>
+              <div class="cvalue">cworknet@kocea.or.kr</div>
             </div>
           </div>
           <div class="contact-item reveal">
