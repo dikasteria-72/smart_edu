@@ -849,6 +849,37 @@
 
     .uni-item:last-child { border-bottom: none; }
 
+    .uni-qr {
+      flex-shrink: 0;
+      width: 80px; height: 80px;
+      margin-left: 0;
+      border: 2px dashed rgba(255,255,255,0.2);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .uni-qr img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      display: none;
+    }
+
+    .uni-qr img.loaded {
+      display: block;
+    }
+
+    .uni-qr-placeholder {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+      line-height: 1.4;
+    }
+
     .uni-logo {
       width: 90px; height: 90px;
       flex-shrink: 0;
@@ -864,7 +895,13 @@
       display: block;
     }
 
-    .uni-info { flex: 1; }
+    .uni-info { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+
+    .uni-tel-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
     .uni-name {
       font-size: 18px;
@@ -1365,7 +1402,13 @@
             <div class="uni-logo"><img src="images/unilogo1.svg" alt="건국대학교"></div>
             <div class="uni-info">
               <div class="uni-name">건국대학교 취업지원센터</div>
-              <div class="uni-tel">02-450-3363</div>
+              <div class="uni-tel-row">
+                <div class="uni-tel">02-450-3363 (교육신청은 QR코드 이용)</div>
+                <div class="uni-qr">
+                  <img src="" alt="신청서 QR" onload="this.classList.add('loaded')">
+                  <span class="uni-qr-placeholder">신청서<br>QR</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1373,7 +1416,13 @@
             <div class="uni-logo"><img src="images/unilogo2.svg" alt="목포대학교"></div>
             <div class="uni-info">
               <div class="uni-name">목포대학교 취업지원센터</div>
-              <div class="uni-tel">061-450-2114</div>
+              <div class="uni-tel-row">
+                <div class="uni-tel">061-450-2114 (교육신청은 QR코드 이용)</div>
+                <div class="uni-qr">
+                  <img src="" alt="신청서 QR" onload="this.classList.add('loaded')">
+                  <span class="uni-qr-placeholder">신청서<br>QR</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1381,7 +1430,13 @@
             <div class="uni-logo"><img src="images/unilogo3.svg" alt="영남대학교"></div>
             <div class="uni-info">
               <div class="uni-name">영남대학교 취업지원센터</div>
-              <div class="uni-tel">053-810-1234</div>
+              <div class="uni-tel-row">
+                <div class="uni-tel">053-810-1234 (교육신청은 QR코드 이용)</div>
+                <div class="uni-qr">
+                  <img src="" alt="신청서 QR" onload="this.classList.add('loaded')">
+                  <span class="uni-qr-placeholder">신청서<br>QR</span>
+                </div>
+              </div>
             </div>
           </div>
 
