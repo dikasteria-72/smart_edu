@@ -886,6 +886,78 @@
       padding: 100px 5%;
     }
 
+    .assoc-contact-inner {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+    }
+
+    .assoc-info-col {
+      flex: 1;
+      max-width: 520px;
+      min-width: 0;
+    }
+
+    .assoc-qr-col {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      flex-shrink: 0;
+    }
+
+    .assoc-qr-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 28px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .assoc-qr-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--white);
+      text-align: center;
+      letter-spacing: -0.3px;
+    }
+
+    .assoc-qr-img {
+      width: 220px; height: 220px;
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .assoc-qr-img img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      display: none;
+    }
+
+    .assoc-qr-img img.loaded { display: block; }
+
+    .assoc-qr-placeholder {
+      font-size: 13px;
+      color: #aaa;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1100px) {
+      .assoc-contact-inner { flex-direction: column; }
+      .assoc-qr-col { flex-direction: row; width: 100%; justify-content: center; }
+    }
+
+    @media (max-width: 560px) {
+      .assoc-qr-col { flex-direction: column; align-items: center; }
+    }
+
     .uni-contact-header {
       margin-bottom: 24px;
       text-align: center;
@@ -1560,38 +1632,63 @@
 
       <!-- 협회 문의처 -->
       <div class="assoc-contact-box">
-        <div class="reveal">
-          <h2>한국건설기술인협회 건설기술인 일자리지원센터</h2>
-        </div>
-        <div class="contact-info-list">
-          <div class="contact-item reveal">
-            <div class="contact-icon">📞</div>
-            <div class="contact-detail">
-              <div class="clabel">대표 전화</div>
-              <div class="cvalue">02-3416-9191</div>
+        <div class="assoc-contact-inner">
+
+          <!-- 왼쪽: 연락처 정보 -->
+          <div class="assoc-info-col">
+            <div class="reveal">
+              <h2>한국건설기술인협회 건설기술인 일자리지원센터</h2>
+            </div>
+            <div class="contact-info-list">
+              <div class="contact-item reveal">
+                <div class="contact-icon">📞</div>
+                <div class="contact-detail">
+                  <div class="clabel">대표 전화</div>
+                  <div class="cvalue">02-3416-9191</div>
+                </div>
+              </div>
+              <div class="contact-item reveal">
+                <div class="contact-icon">📠</div>
+                <div class="contact-detail">
+                  <div class="clabel">팩스</div>
+                  <div class="cvalue">02-3416-9199</div>
+                </div>
+              </div>
+              <div class="contact-item reveal">
+                <div class="contact-icon">📧</div>
+                <div class="contact-detail">
+                  <div class="clabel">이메일</div>
+                  <div class="cvalue">cworknet@kocea.or.kr</div>
+                </div>
+              </div>
+              <div class="contact-item reveal">
+                <div class="contact-icon">📍</div>
+                <div class="contact-detail">
+                  <div class="clabel">주소</div>
+                  <div class="cvalue">(우)06098 서울 강남구 언주로 650<br>건설기술인회관 본관 6층</div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="contact-item reveal">
-            <div class="contact-icon">📠</div>
-            <div class="contact-detail">
-              <div class="clabel">팩스</div>
-              <div class="cvalue">02-3416-9199</div>
+
+          <!-- 오른쪽: QR 코드 카드 -->
+          <div class="assoc-qr-col">
+            <div class="assoc-qr-card reveal">
+              <div class="assoc-qr-title">한국건설기술인협회</div>
+              <div class="assoc-qr-img">
+                <img src="images/qr_assoc.png" alt="협회 QR" onload="this.classList.add('loaded')">
+                <span class="assoc-qr-placeholder">이미지 파일명<br>qr_assoc.png</span>
+              </div>
+            </div>
+            <div class="assoc-qr-card reveal">
+              <div class="assoc-qr-title">건설워크넷</div>
+              <div class="assoc-qr-img">
+                <img src="images/qr_worknet.png" alt="건설워크넷 QR" onload="this.classList.add('loaded')">
+                <span class="assoc-qr-placeholder">이미지 파일명<br>qr_worknet.png</span>
+              </div>
             </div>
           </div>
-          <div class="contact-item reveal">
-            <div class="contact-icon">📧</div>
-            <div class="contact-detail">
-              <div class="clabel">이메일</div>
-              <div class="cvalue">cworknet@kocea.or.kr</div>
-            </div>
-          </div>
-          <div class="contact-item reveal">
-            <div class="contact-icon">📍</div>
-            <div class="contact-detail">
-              <div class="clabel">주소</div>
-              <div class="cvalue">(우)06098 서울 강남구 언주로 650<br>건설기술인회관 본관 6층</div>
-            </div>
-          </div>
+
         </div>
       </div>
 
