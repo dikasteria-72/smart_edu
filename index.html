@@ -780,18 +780,42 @@
       flex-wrap: wrap;
     }
 
-    .record-stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
+    /* 교육실적 카드 티커 (우 → 좌 이동) */
+    .record-ticker-wrap {
       margin-bottom: 40px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .record-ticker-track-wrap {
+      overflow: hidden;
+      width: 100%;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+    }
+
+    .record-ticker-track {
+      display: flex;
+      gap: 18px;
+      width: max-content;
+      animation: recordScroll 35s linear infinite;
+      will-change: transform;
+    }
+
+    .record-ticker-track:hover { animation-play-state: paused; }
+
+    @keyframes recordScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     .record-stat {
+      flex-shrink: 0;
+      width: 260px;
       background: var(--dark3);
       border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 18px;
-      padding: 32px 28px;
+      border-radius: 14px;
+      padding: 14px 15px 16px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -801,7 +825,7 @@
       content: '';
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 3px;
+      height: 2px;
       background: var(--grad);
     }
 
@@ -809,17 +833,29 @@
       width: 100%;
       aspect-ratio: 16 / 9;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 8px;
       display: block;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
+    }
+
+    .record-stat .uni-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #ffffff;
+      text-align: left;
+      letter-spacing: -0.3px;
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .record-stat .label {
-      font-size: 18px;
-      font-weight: 700;
-      color: #ffffff;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
       margin-top: 0;
       text-align: left;
+      line-height: 1.5;
     }
 
     .timeline {
@@ -1535,16 +1571,75 @@
         <h2 class="section-title">교육실적</h2>
       </div>
     </div>
-    <div class="record-stats">
-      <div class="record-stat reveal">
-        <img class="stat-img" src="images/olduni1.jpg" alt="서울시립대학교">
-        <div class="label">[기간] 2025.06.30.(월) - 07.04.(금)</div>
-        <div class="label">[장소] 100주년기념관 307호</div>
-      </div>
-      <div class="record-stat reveal">
-        <img class="stat-img" src="images/olduni2.jpg" alt="동아대학교">
-        <div class="label">[기간] 2026.01.05.(월) - 01.09.(금)</div>
-        <div class="label">[장소] 부민캠퍼스 B104호</div>
+    <div class="record-ticker-wrap">
+      <div class="record-ticker-track-wrap">
+        <div class="record-ticker-track">
+
+          <!-- 원본 5개 (1.서울시립대 2.동아대 3.국립목포대 4.영남대 5.건국대) -->
+          <div class="record-stat">
+            <img class="stat-img" src="images/olduni1.jpg" alt="서울시립대학교">
+            <div class="uni-title">서울시립대학교</div>
+            <div class="label">[기간] 2025.06.30.(월) - 07.04.(금)</div>
+            <div class="label">[장소] 100주년기념관 307호</div>
+          </div>
+          <div class="record-stat">
+            <img class="stat-img" src="images/olduni2.jpg" alt="동아대학교">
+            <div class="uni-title">동아대학교</div>
+            <div class="label">[기간] 2026.01.05.(월) - 01.09.(금)</div>
+            <div class="label">[장소] 부민캠퍼스 B104호</div>
+          </div>
+          <div class="record-stat">
+            <img class="stat-img" src="images/uni2.jpg" alt="국립목포대학교">
+            <div class="uni-title">국립목포대학교</div>
+            <div class="label">[기간] 2026.06.22.(월) - 06.26.(금)</div>
+            <div class="label">[장소] 도림캠퍼스 학생회관 2층 취업강의실</div>
+          </div>
+          <div class="record-stat">
+            <img class="stat-img" src="images/uni3.jpg" alt="영남대학교">
+            <div class="uni-title">영남대학교</div>
+            <div class="label">[기간] 2026.06.22.(월) - 06.26.(금)</div>
+            <div class="label">[장소] 경산캠퍼스 상경관 210호</div>
+          </div>
+          <div class="record-stat">
+            <img class="stat-img" src="images/uni1.jpg" alt="건국대학교">
+            <div class="uni-title">건국대학교</div>
+            <div class="label">[기간] 2026.06.29.(월) - 07.03.(금)</div>
+            <div class="label">[장소] 서울캠퍼스 법학관 102호</div>
+          </div>
+
+          <!-- 무한 루프를 위한 복제본 (원본과 동일하게 유지) -->
+          <div class="record-stat">
+            <img class="stat-img" src="images/olduni1.jpg" alt="서울시립대학교">
+            <div class="uni-title">서울시립대학교</div>
+            <div class="label">[기간] 2025.06.30.(월) - 07.04.(금)</div>
+            <div class="label">[장소] 100주년기념관 307호</div>
+          </div>
+          <div class="record-stat">
+            <img class="stat-img" src="images/olduni2.jpg" alt="동아대학교">
+            <div class="uni-title">동아대학교</div>
+            <div class="label">[기간] 2026.01.05.(월) - 01.09.(금)</div>
+            <div class="label">[장소] 부민캠퍼스 B104호</div>
+          </div>
+          <div class="record-stat">
+            <img class="stat-img" src="images/uni2.jpg" alt="국립목포대학교">
+            <div class="uni-title">국립목포대학교</div>
+            <div class="label">[기간] 2026.06.22.(월) - 06.26.(금)</div>
+            <div class="label">[장소] 도림캠퍼스 학생회관 2층 취업강의실</div>
+          </div>
+          <div class="record-stat">
+            <img class="stat-img" src="images/uni3.jpg" alt="영남대학교">
+            <div class="uni-title">영남대학교</div>
+            <div class="label">[기간] 2026.06.22.(월) - 06.26.(금)</div>
+            <div class="label">[장소] 경산캠퍼스 상경관 210호</div>
+          </div>
+          <div class="record-stat">
+            <img class="stat-img" src="images/uni1.jpg" alt="건국대학교">
+            <div class="uni-title">건국대학교</div>
+            <div class="label">[기간] 2026.06.29.(월) - 07.03.(금)</div>
+            <div class="label">[장소] 서울캠퍼스 법학관 102호</div>
+          </div>
+
+        </div>
       </div>
     </div>
     <div class="timeline">
@@ -1552,8 +1647,8 @@
         <div class="tl-dot">2026.6</div>
         <div class="tl-body">
           <h4>스마트건설기술교육 3개 대학 동시 개최</h4>
-          <p>건국대학교(수도권), 국립목포대학교(호남권), 영남대학교(영남권)에서 개최</p>
-          <p>현재 교육참여 희망자 모집중(각 대학 100명, 선착순)</p>
+          <p>건국대학교(수도권, 6.29.-7.3), 국립목포대학교(호남권, 6.22.-6.26.), 영남대학교(영남권, 6.22.-6.26)에서 개최</p>
+          <p>수료생 : 약 290여 명</p>
         </div>
       </div>
       <div class="tl-item reveal">
